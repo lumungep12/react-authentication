@@ -35,8 +35,10 @@ app.get('/api/home', function(req, res) {
   res.send('Welcome!');
 });
 
-app.get('/api/secret', withAuth, function(req, res) {
-  res.send('The password is potato');
+app.get('/api/secret', withAuth, async(req, res) => {
+  const users = await User.find({});
+  res.send(users);
+  // res.send('The password is potato');
 });
 
 app.get('/api/users', async(req, res) => {
