@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import DataTable from './DataTable';
+import './App.css'
 
 export default class Secret extends Component {
   constructor() {
@@ -9,12 +10,6 @@ export default class Secret extends Component {
       usersCollection: []
     }
   }
-
-  // componentDidMount() {
-  //   fetch('/api/secret')
-  //     .then(res => res.text())
-  //     .then(res => this.setState({message: res}));
-  // }
 
   componentDidMount(){
     axios.get('/api/users')
